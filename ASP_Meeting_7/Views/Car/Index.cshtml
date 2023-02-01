@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Car>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Модель</th>
+            <th>Виробник</th>
+            <th>Ціна, USD</th>
+            <th></th>
+            </tr>
+    </thead>
+    <tbody>
+        @foreach(Car car in Model)
+        {
+            <tr>
+                <td>@car.Id</td>
+                <td>@car.ModelName</td>
+                <td>@car.Manufacturer</td>
+                <td>@car.Price</td>
+               @* <td><a href="/car/delete/@car.Id">Видалити</a></td>*@
+                <td>
+                    <a asp-action="details" asp-route-id="@car.Id">Детально...</a>| 
+                    <a asp-action="edit" asp-route-id="@car.Id">Редагувати</a>| 
+                    <a asp-action="delete" asp-route-id="@car.Id">Видалити</a>
+                    </td>
+            </tr>
+        }
+    </tbody>
+</table>

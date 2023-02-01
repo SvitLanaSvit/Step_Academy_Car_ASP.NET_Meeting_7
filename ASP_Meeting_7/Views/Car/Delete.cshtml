@@ -1,0 +1,11 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Car
+@*<form method="post" asp-action="confirmdelete">*@
+<form method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <h2>Ви дійсно хочете видалити інформацію про @Model.ModelName @Model.Manufacturer</h2>
+    <input type="submit" value="Видалити" class="btn btn-sm btn-danger" />
+    <a asp-action="Index">Повернутися до списку</a> 
+</form>

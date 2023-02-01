@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Car
+<form method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div>
+        <label class="col-form-label">
+            Модель:
+            <input class="form-control" type="text" name="modelName" value="@Model.ModelName" />
+        </label>
+    </div>
+    <div>
+        <label class="col-form-label">
+            Виробник:
+            <input class="form-control" type="text" name="manufacturer" value="@Model.Manufacturer" />
+        </label>
+    </div>
+    <div>
+        <label class="col-form-label">
+            Ціна:
+            <input class="form-control" type="number" name="price"  value="@Model.Price"/>
+        </label>
+    </div>
+    <input type="submit" class="btn btn-sm btn-secondary" value="Редагувати" />
+    <a asp-action="Index" class="btn btn-sm btn-primary">Повернутися до списку</a>
+</form>
